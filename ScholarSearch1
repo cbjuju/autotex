@@ -1,0 +1,16 @@
+#!/usr/bin/python3
+
+from helper import *
+
+browserFocus(1)
+
+pag.hotkey('ctrl', 'c')
+pag.hotkey('ctrl', 't')
+delay()
+
+pag.write('scholar.google.com')
+pag.press('tab')
+
+pag.hotkey('ctrl', 'v')
+
+pag.press('enter')

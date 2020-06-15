@@ -1,0 +1,53 @@
+#!/usr/bin/python3
+
+from helper import *
+
+"""
+The assumption is that there is a browser already open and that it is possible
+to shift to the browser simply by pressing alt + tab
+"""
+
+browserFocus(1)
+
+refBib     = [85, 253]
+mainTex    = [111, 217]
+
+# Change to the last tab of the browser. It is assumed that that is where the reference is 
+pag.hotkey('alt', '9')
+delay()
+
+# Copy the contents of the page
+pag.hotkey('ctrl', 'a')
+pag.hotkey('ctrl', 'c')
+delay()
+
+# Go to the overleaf tab
+pag.hotkey('alt', '2')
+delay()
+pag.click(refBib) # references link if there is only one other file
+time.sleep(1)
+
+# Create a space for the reference
+pag.hotkey('ctrl', 'home')
+delay()
+pag.press('enter')
+pag.press('enter')
+pag.press('up')
+pag.press('up')
+
+# Paste the reference
+pag.hotkey('ctrl', 'v')
+time.sleep(1)
+
+# Close the reference page and its scholar origin
+pag.hotkey('alt', '9')
+delay()
+pag.hotkey('ctrl', 'f4')
+pag.hotkey('ctrl', 'f4')
+
+# Go back to the overleaf tab
+pag.hotkey('alt', '2')
+delay()
+
+# Go to the main.tex page
+pag.click(mainTex)

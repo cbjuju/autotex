@@ -1,0 +1,28 @@
+#!/usr/bin/python3
+
+from helper import *
+
+browserFocus(1)
+
+refId      = [129, 142]
+refBib     = [85, 253]
+
+pag.hotkey('alt', '9')
+delay()
+
+pag.click(refId)
+pag.click(refId)
+
+pag.hotkey('ctrl', 'c')
+delay()
+
+pag.hotkey('alt', '2')
+delay()
+pag.click(refBib) 
+delay()
+
+pag.hotkey('ctrl', 'f')
+delay()
+
+pag.hotkey('ctrl', 'v')
+delay()

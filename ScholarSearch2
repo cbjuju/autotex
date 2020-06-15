@@ -1,0 +1,42 @@
+#!/usr/bin/python3
+
+from helper import *
+
+theBrowser = [1700, 75]
+refBib     = [85, 289]
+
+pag.hotkey('alt', 'tab')
+delay()
+
+pag.hotkey('ctrl', 'c')
+delay()
+
+pag.keyDown('alt')
+pag.press('tab')
+pag.press('tab')
+pag.keyUp('alt')
+
+"""
+pag.click(theBrowser)
+pag.hotkey('ctrl', 't')
+delay()
+
+pag.write('scholar.google.com')
+pag.press('tab')
+delay()
+"""
+pag.click(theBrowser)
+delay()
+pag.hotkey('alt', '2')
+delay()
+pag.click(refBib) 
+delay()
+delay()
+
+pag.hotkey('ctrl', 'f')
+delay()
+
+pag.hotkey('ctrl', 'v')
+delay()
+
+pag.press('enter')

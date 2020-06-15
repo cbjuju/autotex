@@ -1,0 +1,25 @@
+#!/usr/bin/python3
+
+from helper import *
+
+browserFocus(1)
+
+scArticles = [783, 363]
+searchBut  = [1174, 318]
+
+pag.hotkey('ctrl', 'c')
+pag.hotkey('ctrl', 't')
+delay()
+
+pag.write('gen.lib.rus.ec')
+pag.press('enter')
+time.sleep(3)
+
+pag.hotkey('ctrl', 'v')
+delay()
+
+pag.click(scArticles)
+delay()
+
+pag.click(searchBut)
+delay()
